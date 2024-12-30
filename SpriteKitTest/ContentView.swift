@@ -47,6 +47,7 @@ class Game: SKScene {
     
     override func didMove(to view: SKView) {
         let start = StartButton(onStart: onStart)
+        start.isUserInteractionEnabled = true
         
         
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: UIScreen.main.bounds)
@@ -58,6 +59,8 @@ class Game: SKScene {
 
 class StartButton: SKNode {
     let onStart: () -> Void
+    
+    
     
     required init(onStart: @escaping () -> Void) {
         self.onStart = onStart
